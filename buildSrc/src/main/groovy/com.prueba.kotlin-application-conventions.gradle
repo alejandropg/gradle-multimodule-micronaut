@@ -1,0 +1,6 @@
+
+plugins {
+    id 'com.prueba.kotlin-common-conventions'
+
+    id 'io.micronaut.application'
+}

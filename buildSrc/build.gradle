@@ -1,0 +1,13 @@
+plugins {
+    id 'groovy-gradle-plugin'
+}
+
+repositories {
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0'
+
+    implementation 'io.micronaut.gradle:micronaut-gradle-plugin:3.0.0'
+}

@@ -1,0 +1,31 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    micronautVersion = '3.2.0'
+}
+
+dependencies {
+    constraints {
+        implementation 'org.apache.commons:commons-text:1.9'
+        implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    }
+
+    implementation platform('org.jetbrains.kotlin:kotlin-bom')
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+
+    testImplementation 'io.micronaut.test:micronaut-test-junit5' // this breaks the build
+    // testImplementation 'org.junit.jupiter:junit-jupiter-engine' // this breaks the build
+    // testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine' // if dependeny is runtimeOnly doesn't break the build
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
